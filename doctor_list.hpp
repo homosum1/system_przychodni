@@ -13,12 +13,15 @@
 #include <vector>
 #include <algorithm>
 #include <exception>
+#include <functional>
 
 #include "MyList.hpp"
 #include "Specialists.hpp"
 
 #ifndef doctor_list_hpp
 #define doctor_list_hpp
+
+template<class T> void archive(T* type) { /* archive */ }
 
 class DoctorList {
 private:
@@ -29,7 +32,9 @@ private:
     void inicialization();
 public:
     DoctorList(std::string listPath): FilePath(listPath) { inicialization(); }
-    ~DoctorList() {};
+    ~DoctorList() {
+        std::for_each(CategoriesDocs.begin(), CategoriesDocs.end(), std::ptr_fun(&archive<Doctor>) ); 
+    };
     
     void display_list();
     void group_docs() throw(std::logic_error);
