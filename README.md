@@ -16,6 +16,7 @@ Wykorzystane funkcje języka
 - polimorfizm, czysto wirtualne metody 
 - klasa abstrakcyjna
 - szablony STL
+- algorytmy STL
 - iteratory
 - zakresowa pętla for
 - własny szablon klasy
